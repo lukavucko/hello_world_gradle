@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Checkout') {
           steps {
-             checkout scm
+          dir('HelloWorlds') {
+          git url: 'https://github.com/lukavucko/hello_world_gradle'
+    }
           }
         }
         stage('Build') {
